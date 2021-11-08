@@ -20,5 +20,11 @@ try:
     if connection.is_connected():
         cursor = connection.cursor()
 except Error as e:
-    print(e)
-    exit()
+    connection = mysql.connector.connect(
+    host=constant.dbHost,
+    user=constant.dbUser,
+    password=constant.dbPassword)
+    cursor = connection.cursor()
+    cursor.execute("CREATE DATABASE IF NOT EXISTS findmatches")
+    connection.commit()
+    

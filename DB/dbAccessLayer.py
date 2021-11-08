@@ -2,6 +2,7 @@ import initDB
 from initDB import constant
 
 initDB.cursor.execute("USE {}".format(constant.dbName))
+initDB.cursor.execute(constant.sqlCreateTable)
 
 def tryIfConnected(funToLoad):
     try:
@@ -45,3 +46,17 @@ def getLevel(level = 1):
     initDB.cursor.execute(sql, (level,))
     return initDB.cursor.fetchall()
         
+def seeder(records = 1):
+    import random
+    letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxwy"
+    #letters = random.shuffle(letters)
+    for _ in range(records):
+        name = "".join(random.choices(letters, k=5))
+        values = [(name, random.randrange(1, 200), level) for level in range(1, 4)]
+        sql = '''INSERT INTO scores(name, time, level) VALUES (%s,%s, %s)'''
+        initDB.cursor.executemany(sql, values)
+        initDB.connection.commit()
+    
+    
+
+    
