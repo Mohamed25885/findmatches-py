@@ -14,8 +14,9 @@ class Score:
 
     
     
-    def storeScore():
-        pass
+    def storeScore(data):
+        return dbAccessLayer.insertIntoScore(**data)
+        
     
     @staticmethod
     def getLevel(level = 1):
@@ -23,5 +24,4 @@ class Score:
         
     
 
-print(Score.getLevel(2))
 

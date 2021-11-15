@@ -1,8 +1,8 @@
 import initDB
-from initDB import constant
+from initDB import dbConstant
 
-initDB.cursor.execute("USE {}".format(constant.dbName))
-initDB.cursor.execute(constant.sqlCreateTable)
+initDB.cursor.execute("USE {}".format(dbConstant.dbName))
+initDB.cursor.execute(dbConstant.sqlCreateTable)
 
 def tryIfConnected(funToLoad):
     try:
@@ -39,7 +39,7 @@ def insertIntoScore(name,time, level):
         initDB.cursor.execute(sql, val)
         initDB.connection.commit()
     except initDB.Error as e:
-        print(e)
+        return e
 
 def getLevel(level = 1):
     sql = "SELECT name,time,level FROM scores WHERE level = %s ORDER BY time"
