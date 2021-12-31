@@ -19,24 +19,24 @@ def score():
 label1=Label(menu,text="Welcome to EA sports, It's now in the game!",bg='#102020',font=("Times bold",20),height=3,pady=45,padx=45,activeforeground = '#12005e',
             activebackground = "yellow",fg='white')
 label1.pack(side='top')
-B0 = Button(menu, text = "Start new game (Very EASY)",command=lambda: open_game(2),
+B0 = Button(menu, text = "Start new game (Very EASY)",command=lambda: open_game(6),
                 activeforeground = 'white',
                 activebackground = "#6746c3", bg = "#12005e",
                 fg = "white", width = 50, font = 'summer',bd='5')
 B0.place(x=400,y=250)
 
-B1 = Button(menu, text = "Start new game (EASY)",command=lambda: open_game(4),
+B1 = Button(menu, text = "Start new game (EASY)",command=lambda: open_game(8),
                 activeforeground = 'white',
                 activebackground = "#6746c3", bg = "#12005e",
                 fg = "white", width = 50, font = 'summer',bd='5')
 B1.place(x=400,y=250)
-B9 = Button(menu, text = "Start new game (Medium)",command=lambda: open_game(6),
+B9 = Button(menu, text = "Start new game (Medium)",command=lambda: open_game(10),
                 activeforeground = 'white',
                 activebackground = "#6746c3", bg = "#12005e",
                 fg = "white", width = 50, font = 'summer',bd='5')
 B9.place(x=243,y=230)
 
-B4 = Button(menu, text = "Start new game (HARD)",command=lambda: open_game(8),
+B4 = Button(menu, text = "Start new game (HARD)",command=lambda: open_game(12),
                 activeforeground = 'white',
                 activebackground = "#6746c3", bg = "#12005e",
                 fg = "white", width = 50, font = 'summer',bd='5')
