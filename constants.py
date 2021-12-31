@@ -13,3 +13,15 @@ def getLevel():
 def setLevel(l):
     global __level
     __level = l
+
+
+def getScore():
+    f = open("currentScore.txt", "r")
+    score = f.read()
+    f.close()
+    return int(score)
+
+def setScore(l):
+    f = open("currentScore.txt", "w")
+    f.write(f"{str(l)}")
+    f.close()

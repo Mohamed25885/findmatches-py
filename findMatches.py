@@ -2,6 +2,7 @@ from tkinter import *
 from constants import getLevel
 import random
 import time
+import os
 
 level = getLevel()
 
@@ -65,7 +66,7 @@ time1 = int(time.strftime("%H"))*3600 + int(time.strftime("%M")) *60 + int(time.
 #reset the game
 def retrun2menu():
     root.destroy()
-    import menu
+    os.system("python ./menu.py")
 def reset():
     global matches, winner, stop, time1, tries
     winner =0
