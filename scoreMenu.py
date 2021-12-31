@@ -5,6 +5,7 @@ from constants import  getScore, setScore
 import os
 levels  = {"Very Easy": 2,"Easy": 4, "Medium": 6, "Hard": 8}
 choice = {2:0, 4:1, 6:2, 8:3}
+
 results = Score.getLevel(getScore())
 root = Tk()
 

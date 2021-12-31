@@ -24,6 +24,7 @@ B0 = Button(menu, text = "Start new game (Very EASY)",command=lambda: open_game(
                 activebackground = "#6746c3", bg = "#12005e",
                 fg = "white", width = 50, font = 'summer',bd='5')
 B0.place(x=400,y=250)
+
 B1 = Button(menu, text = "Start new game (EASY)",command=lambda: open_game(4),
                 activeforeground = 'white',
                 activebackground = "#6746c3", bg = "#12005e",
@@ -34,6 +35,7 @@ B9 = Button(menu, text = "Start new game (Medium)",command=lambda: open_game(6),
                 activebackground = "#6746c3", bg = "#12005e",
                 fg = "white", width = 50, font = 'summer',bd='5')
 B9.place(x=243,y=230)
+
 B4 = Button(menu, text = "Start new game (HARD)",command=lambda: open_game(8),
                 activeforeground = 'white',
                 activebackground = "#6746c3", bg = "#12005e",
@@ -50,6 +52,7 @@ B3.place(y=240)
 B0.pack(side = 'top')
 B1.pack(side = 'top')
 B9.pack(side = 'top')
+
 B4.pack(side = 'top')
 B2.pack(side = 'top')
 B3.pack(side = 'top')
