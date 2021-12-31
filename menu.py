@@ -13,7 +13,7 @@ def open_game(l):
     setLevel(l)
     import findMatches
 def score():
-    setScore(4)
+    setScore(2)
     menu.destroy()
     import scoreMenu
 label1=Label(menu,text="Welcome to EA sports, It's now in the game!",bg='#102020',font=("Times bold",20),height=3,pady=45,padx=45,activeforeground = '#12005e',
