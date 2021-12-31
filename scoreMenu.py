@@ -1,13 +1,41 @@
 from tkinter import *
 from Score import Score
-
-results = Score.getLevel(1)
+from tkinter import ttk
+from constants import  getScore, setScore
+import os
+levels  = {"Very Easy": 2,"Easy": 4, "Medium": 6, "Hard": 8}
+choice = {2:0, 4:1, 6:2, 8:3}
+results = Score.getLevel(getScore())
 root = Tk()
 
 root.geometry("400x500")
 
 mainFrame = Frame(root)
 mainFrame.pack(fill = BOTH, expand=1)
+
+style= ttk.Style()
+style.theme_use('clam')
+style.configure("TCombobox", fieldbackground= "orange", background= "white")
+
+def retrun2menu():
+    root.destroy()
+    os.system("python ./menu.py")
+
+def onChange(*args):
+    setScore(levels[levelchoosen.get()])
+    root.destroy()
+    os.system("python ./scoreMenu.py")
+    
+    
+
+n=StringVar()
+#n.trace("w", onChange)
+chooselabel=Label(mainFrame,text="choose the level you want?",fg="gray",bg="black").pack()
+levelchoosen=ttk.Combobox(mainFrame,width=10,textvar=n)
+levelchoosen.bind("<<ComboboxSelected>>", onChange)
+levelchoosen.pack()
+levelchoosen["values"]=[i for i in levels.keys()]
+levelchoosen.current(choice[getScore()])
 
 canvas = Canvas(mainFrame)
 canvas.pack(side=LEFT, fill=BOTH, expand=1)
@@ -33,6 +61,18 @@ labels = [Label(frame, width=50, height=5, background="red", textvariable=text)
 
 for i in range(len(labels)):
     labels[i].grid(row=i, pady=5, padx=5)
+    
+    
+my_menu = Menu(root)
+root.config(menu=my_menu)
+
+#create an option dropdown menu
+option_menu = Menu(my_menu, tearoff=False)
+my_menu.add_cascade(label="Options", menu=option_menu)
+my_menu.add_separator()
+my_menu.add_command(label="Menu",command=retrun2menu)
+my_menu.add_command(label="Exit game", command=root.destroy)
+
 
 root.mainloop()
 
