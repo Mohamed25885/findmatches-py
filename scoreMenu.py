@@ -3,7 +3,7 @@ from Score import Score
 from tkinter import ttk
 from constants import  getScore, setScore
 import os
-levels  = {"Very Easy": 2,"Easy": 4, "Medium": 6, "Hard": 8}
+levels  = {"Very Easy": 6,"Easy": 8, "Medium": 10, "Hard": 12}
 choice = {6:0, 8:1, 10:2, 12:3}
 
 results = Score.getLevel(getScore())
