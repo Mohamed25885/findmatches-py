@@ -4,7 +4,7 @@ from tkinter import ttk
 from constants import  getScore, setScore
 import os
 levels  = {"Very Easy": 2,"Easy": 4, "Medium": 6, "Hard": 8}
-choice = {2:0, 4:1, 6:2, 8:3}
+choice = {6:0, 8:1, 10:2, 12:3}
 
 results = Score.getLevel(getScore())
 root = Tk()
